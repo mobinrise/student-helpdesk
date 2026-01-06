@@ -4,56 +4,91 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Student Helpdesk</title>
-  <style>
-    body { font-family: Arial, sans-serif; max-width: 820px; margin: 40px auto; padding: 0 16px; line-height: 1.5; }
-    .card { border: 1px solid #ddd; border-radius: 14px; padding: 18px; margin-top: 18px; }
-    h1 { margin: 0 0 8px; }
-    .muted { color: #666; }
-    .btn {
-      display: inline-block; margin-top: 12px; padding: 12px 16px;
-      border-radius: 12px; border: 1px solid #111; text-decoration: none; color: #111;
-    }
-    ul { margin: 10px 0 0 18px; }
-    footer { margin-top: 30px; color: #777; font-size: 14px; }
-  </style>
+
+  <meta name="description" content="Student Helpdesk — Submit your query and get support within 24 hours." />
+
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-  <h1>Student Helpdesk</h1>
-  <p class="muted">Submit your query and we will respond as soon as possible (usually within 24 hours).</p>
+  <div class="container">
 
-  <div class="card">
-    <h2>Submit your question</h2>
-    <p>Use the form below to send your details:</p>
-    <a class="btn" href="https://forms.gle/rspNBQ8CWEijUEkU6" target="_blank" rel="noopener">
-      Open Helpdesk Form
-    </a>
-    <p class="muted">After submission, you’ll see a confirmation message.</p>
+    <header>
+      <div class="title">
+        <h1>Student Helpdesk</h1>
+        <p class="subtitle">Submit your query and we will respond as soon as possible (usually within 24 hours).</p>
+      </div>
+
+      <div class="top-actions">
+        <div class="chip" id="statusChip">🕒 Response: within 24 hours</div>
+        <button class="icon-btn" id="themeBtn" type="button" aria-label="Toggle dark mode">🌙</button>
+      </div>
+    </header>
+
+    <main class="grid">
+
+      <!-- Left: main -->
+      <section class="card reveal">
+        <h2>Submit your question</h2>
+        <p>Use the form below to send your details:</p>
+
+        <a class="btn" href="https://forms.gle/rspNBQ8CWEijUEkU6" target="_blank" rel="noopener">
+          Open Helpdesk Form <span class="arrow">→</span>
+        </a>
+
+        <p class="muted">After submission, you’ll see a confirmation message.</p>
+
+        <div class="copy-row">
+          <button class="small-btn" type="button" id="copyLinkBtn">📋 Copy form link</button>
+          <button class="small-btn" type="button" id="shareBtn">📲 Share</button>
+        </div>
+      </section>
+
+      <!-- Right: side -->
+      <aside class="side-stack">
+
+        <section class="card reveal">
+          <h2>What we can help with</h2>
+          <ul>
+            <li>Admissions guidance</li>
+            <li>Class &amp; subject support</li>
+            <li>Exam preparation</li>
+            <li>Timetable &amp; schedule questions</li>
+            <li>General student queries</li>
+          </ul>
+
+          <div class="kpi">
+            <div class="pill">
+              <b>Estimated reply</b>
+              <span class="muted">Within 24 hours</span>
+            </div>
+            <div class="pill">
+              <b>Availability</b>
+              <span class="muted">Mon–Sat</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="card reveal">
+          <h2>Response time</h2>
+          <p>We usually respond within <b>24 hours</b>. For urgent issues, contact us directly.</p>
+
+          <!-- Optional contact -->
+          <!-- <p><b>Phone/WhatsApp:</b> <a href="tel:+923324324526">03324324526</a></p> -->
+        </section>
+
+      </aside>
+    </main>
+
+    <footer>
+      <div>© <span id="year"></span> Student Helpdesk</div>
+      <div class="muted">Made for mobile &amp; desktop</div>
+    </footer>
+
   </div>
 
-  <div class="card">
-    <h2>What we can help with</h2>
-    <ul>
-      <li>Admissions guidance</li>
-      <li>Class & subject support</li>
-      <li>Exam preparation</li>
-      <li>Timetable & schedule questions</li>
-      <li>General student queries</li>
-    </ul>
-  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <div class="card">
-    <h2>Response time</h2>
-    <p>We usually respond within <b>24 hours</b>. For urgent issues, contact us directly.</p>
-    <!-- Optional: add your contact here -->
-    <!-- <p><b>Phone/WhatsApp:</b> 03324324526</p> -->
-  </div>
-
-  <footer>
-    © <span id="year"></span> Student Helpdesk
-  </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
