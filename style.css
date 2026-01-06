@@ -376,4 +376,27 @@ footer{
   transform: scale(1.05);
   box-shadow: 0 14px 30px rgba(0,0,0,.3);
 }
+/* FAQ */
+details{
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px 14px;
+  margin-top: 10px;
+  background: var(--surface);
+  cursor: pointer;
+}
+
+summary{
+  font-weight: 600;
+  list-style: none;
+}
+
+summary::-webkit-details-marker{
+  display: none;
+}
+
+details p{
+  margin-top: 8px;
+  color: var(--muted);
+}
 
